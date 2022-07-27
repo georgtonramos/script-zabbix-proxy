@@ -6,5 +6,11 @@ dpkg -i zabbix-release_6.0-3+ubuntu20.04_all.deb
 apt update 
 apt install zabbix-proxy-sqlite3
 
+echo "Copiar Arquivo .conf"
+cd /var/lib/
+mkdir zabbix
+chown zabbix. zabbix/
+cp zabbix_proxy.conf /etc/zabbix/zabbix_proxy.conf
+
 echo "Iniciando os serviços"
 systemctl restart zabbix-proxy
