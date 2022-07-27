@@ -7,10 +7,10 @@ apt update
 apt install zabbix-proxy-sqlite3
 
 echo "Copiar Arquivo .conf"
+cp zabbix_proxy.conf /etc/zabbix/zabbix_proxy.conf
 cd /var/lib/
 mkdir zabbix
 chown zabbix. zabbix/
-cp zabbix_proxy.conf /etc/zabbix/zabbix_proxy.conf
 
 echo "Iniciando os serviços"
 systemctl restart zabbix-proxy
